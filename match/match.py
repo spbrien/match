@@ -51,14 +51,14 @@ def get_replacement_name(item):
 
     return None
 
-def match_factory(list_to_check, threshold=90):
+def match_factory(list_to_check_against, list_to_check=None, threshold=90):
 
     def find_match(items):
         match_check = [{
             'name': item,
             'matches': extract_matches_from_list(
                 item,
-                list_to_check,
+                list_to_check_against,
                 threshold=threshold
             )
         } for item in uniq(items)]
@@ -86,4 +86,4 @@ def match_factory(list_to_check, threshold=90):
             ],
         }
 
-    return find_match
+    return find_match(list_to_check) if list_to_check else find_match
