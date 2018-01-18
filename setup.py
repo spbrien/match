@@ -13,6 +13,7 @@ with open('HISTORY.md') as history_file:
 
 requirements = [
     'Click>=6.0',
+    'fuzzywuzzy'
     # TODO: put package requirements here
 ]
 
